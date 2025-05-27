@@ -347,7 +347,7 @@ fn eval(term: Term, mut env: Option<&mut Storage>) -> Val {
 fn main() {
   let program = std::fs::read_to_string("../interpreter/read.json").unwrap();
   let program: File = serde_json::from_str(&program).unwrap();
-  
+
   let term = program.expression;
   println!("{:?}", eval(term, None));
 }
